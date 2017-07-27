@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="GrandMedia/CodingStandard">
+    <rule ref="vendor/kdyby/coding-standard/KdybyCodingStandard/ruleset-7.1.xml">
+        <exclude name="Generic.PHP.UpperCaseConstant"/>
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.PHP.LowerCaseConstant"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+        <properties>
+            <property name="usefulAnnotations" type="array" value="@throws,@covers,@dataProvider,@inject,@testCase"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification">
+        <exclude-pattern>tests/</exclude-pattern>
+    </rule>
+</ruleset>

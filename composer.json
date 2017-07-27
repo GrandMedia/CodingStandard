@@ -1,0 +1,20 @@
+{
+  "name": "grand-media/coding-standard",
+  "description": "GrandMedia CodingStandard",
+  "license": [
+    "BSD-3-Clause",
+    "GPL-2.0",
+    "GPL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Grand Media s.r.o.",
+      "email": "vesely@grandmedia.cz",
+      "homepage": "http://www.grandmedia.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "kdyby/coding-standard": "@dev"
+  }
+}
