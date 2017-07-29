@@ -8,6 +8,7 @@ final class FullyQualifiedFunctionSniffTest extends \SlevomatCodingStandard\Snif
 	public function testValid(): void
 	{
 		$this->assertNoSniffErrorInFile($this->checkFile(__DIR__ . '/data/valid.php'));
+		$this->assertNoSniffErrorInFile($this->checkFile(__DIR__ . '/data/no-namespace.php'));
 	}
 
 	public function testInvalid(): void
