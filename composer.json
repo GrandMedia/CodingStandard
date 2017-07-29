@@ -15,6 +15,28 @@
   ],
   "require": {
     "php": ">=7.1",
-    "kdyby/coding-standard": "@dev"
+    "kdyby/coding-standard": "@dev",
+    "slevomat/coding-standard": "^2.4",
+    "squizlabs/php_codesniffer": "^2.9.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "GrandMediaCodingStandard\\": "GrandMediaCodingStandard/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "GrandMediaCodingStandard\\": "tests/",
+      "SlevomatCodingStandard\\": "vendor/slevomat/coding-standard/tests"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "slevomat/coding-standard": "source",
+      "*": "dist"
+    }
   }
 }
