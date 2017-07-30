@@ -5,6 +5,7 @@ GrandMedia/CodingStandard
 [![Downloads this Month](https://img.shields.io/packagist/dm/grand-media/coding-standard.svg)](https://packagist.org/packages/grand-media/coding-standard)
 [![Latest stable](https://img.shields.io/packagist/v/grand-media/coding-standard.svg)](https://packagist.org/packages/grand-media/coding-standard)
 [![Coverage Status](https://coveralls.io/repos/github/GrandMedia/CodingStandard/badge.svg?branch=master)](https://coveralls.io/github/GrandMedia/CodingStandard?branch=master)
+![PHPStan](https://img.shields.io/badge/style-level%207-brightgreen.svg?style=flat-square&label=phpstan)
 
 Installation
 ------------
