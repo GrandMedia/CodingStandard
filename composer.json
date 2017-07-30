@@ -14,7 +14,7 @@
   },
   "require": {
     "php": ">=7.1",
-    "kdyby/coding-standard": "@dev",
+    "consistence/coding-standard": "~1.1.0",
     "slevomat/coding-standard": "^2.4",
     "squizlabs/php_codesniffer": "^2.9.1"
   },

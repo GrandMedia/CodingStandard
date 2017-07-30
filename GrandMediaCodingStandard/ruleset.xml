@@ -1,15 +1,65 @@
 <?xml version="1.0"?>
 <ruleset name="GrandMedia/CodingStandard">
-	<rule ref="vendor/kdyby/coding-standard/KdybyCodingStandard/ruleset-7.1.xml">
-		<exclude name="Generic.PHP.UpperCaseConstant"/><!-- using lower_case null, true, false -->
+	<!-- run also for tests written with Nette/Tester -->
+	<arg name="extensions" value="php,phpt"/>
+
+	<!-- standardize tab width -->
+	<arg name="tab-width" value="4"/>
+
+	<!-- exclude tests temp dir (it's a mess) -->
+	<exclude-pattern>*/tests/temp/*</exclude-pattern>
+	<exclude-pattern>*/tests/tmp/*</exclude-pattern>
+
+	<!-- include consistence rules -->
+	<rule ref="vendor/consistence/coding-standard/Consistence/ruleset.xml">
 		<exclude
-				name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/><!-- too long lines -->
+				name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified"/> <!-- this just prevents using the "use" section -->
+		<exclude
+				name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/><!-- checks for long scalar names in PHPDoc, but we use short -->
+		<exclude
+				name="Squiz.Commenting.FunctionComment.MissingParamTag"/> <!-- I'm not gonna write @param, if it's already in the typehint -->
+		<exclude name="Squiz.PHP.Heredoc"/>
 	</rule>
 
-	<!-- using lower_case null, true, false -->
-	<rule ref="Generic.PHP.LowerCaseConstant"/>
+	<!-- include slevomat rules -->
+	<rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
+		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/>
+	</rule>
 
-	<!-- allow \global_function() and \GlobalClass, it's faster -->
+	<rule ref="Generic.PHP.BacktickOperator"/>
+
+	<rule ref="Generic.Commenting.DocComment">
+		<exclude name="Generic.Commenting.DocComment.ContentAfterOpen"/>
+		<exclude name="Generic.Commenting.DocComment.ContentBeforeClose"/>
+		<exclude name="Generic.Commenting.DocComment.MissingShort"/>
+		<exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
+		<exclude name="Generic.Commenting.DocComment.ParamNotFirst"/>
+		<exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+	</rule>
+
+	<rule ref="Generic.Formatting.MultipleStatementAlignment">
+		<properties>
+			<property name="maxPadding" value="0"/>
+			<property name="error" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- ignore in tests -->
+	<rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+		<!-- allow grouping of exceptions in one file -->
+		<exclude-pattern>*/exceptions.php</exclude-pattern>
+		<!-- useful for writing files with lot of stub classes -->
+		<exclude-pattern>*/tests/*</exclude-pattern>
+	</rule>
+
+	<rule ref="PSR1.Files.SideEffects">
+		<exclude-pattern>*.phpt</exclude-pattern>
+		<exclude-pattern>*/tests/bootstrap.php</exclude-pattern>
+		<exclude-pattern>*/tests/*/bootstrap.php</exclude-pattern>
+	</rule>
+
+	<!-- allow \global_function() it's faster -->
 	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
 		<properties>
 			<property name="allowFullyQualifiedGlobalClasses" value="1"/>
@@ -32,6 +82,40 @@
 
 	<!-- ignore in tests -->
 	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification">
-		<exclude-pattern>tests/</exclude-pattern>
+		<exclude-pattern>*/tests/*</exclude-pattern>
+	</rule>
+
+	<!-- ignore in tests -->
+	<rule ref="Squiz.Classes.ClassFileName.NoMatch">
+		<!-- more exceptions in one file won't match -->
+		<exclude-pattern>*/exceptions.php</exclude-pattern>
+		<!-- useful for writing files with lot of stub classes -->
+		<exclude-pattern>*/tests/*</exclude-pattern>
+	</rule>
+
+	<rule ref="Squiz.Commenting.VariableComment">
+		<exclude name="Squiz.Commenting.VariableComment.TagNotAllowed"/>
+		<exclude name="Squiz.Commenting.VariableComment.VarOrder"/>
+		<exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/>
+	</rule>
+
+	<rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
+
+	<rule ref="Squiz.Functions.GlobalFunction">
+		<exclude-pattern>*.phpt</exclude-pattern>
+		<exclude-pattern>*/tests/bootstrap.php</exclude-pattern>
+		<exclude-pattern>*/tests/*/bootstrap.php</exclude-pattern>
+	</rule>
+
+	<rule ref="Squiz.PHP.ForbiddenFunctions">
+		<properties>
+			<property name="forbiddenFunctions" type="array"
+					  value="sizeof=>count,delete=>unset,print=>echo,is_null=>null,create_function=>null,var_dump=>null,dump=>null,print_r=>null"/>
+		</properties>
+	</rule>
+
+	<!-- allow in tests -->
+	<rule ref="Squiz.PHP.Heredoc">
+		<exclude-pattern>*.phpt</exclude-pattern>
 	</rule>
 </ruleset>
