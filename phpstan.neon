@@ -1,3 +1,5 @@
 parameters:
+	autoload_files:
+		- %currentWorkingDirectory%/vendor/squizlabs/php_codesniffer/autoload.php
 	excludes_analyse:
 		- */tests/*/data/*

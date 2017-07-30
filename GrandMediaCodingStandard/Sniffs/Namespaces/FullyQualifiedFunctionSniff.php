@@ -2,11 +2,11 @@
 
 namespace GrandMediaCodingStandard\Sniffs\Namespaces;
 
-use PHP_CodeSniffer_File;
+use PHP_CodeSniffer\Files\File;
 use SlevomatCodingStandard\Helpers\NamespaceHelper;
 use SlevomatCodingStandard\Helpers\ReferencedNameHelper;
 
-final class FullyQualifiedFunctionSniff implements \PHP_CodeSniffer_Sniff
+final class FullyQualifiedFunctionSniff implements \PHP_CodeSniffer\Sniffs\Sniff
 {
 
 	public const FUNCTION_REFERENCE_WITHOUT_FULLY_QUALIFIED_NAMESPACE = 'FunctionWithoutFullyQualifiedName';
@@ -23,12 +23,12 @@ final class FullyQualifiedFunctionSniff implements \PHP_CodeSniffer_Sniff
 
 	/**
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint
-	 * @param \PHP_CodeSniffer_File $phpcsFile
+	 * @param \PHP_CodeSniffer\Files\File $phpcsFile
 	 * @param int $stackPtr
 	 *
 	 * @return void|int
 	 */
-	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr)
 	{
 		$referencedNames = ReferencedNameHelper::getAllReferencedNames($phpcsFile, $stackPtr);
 
