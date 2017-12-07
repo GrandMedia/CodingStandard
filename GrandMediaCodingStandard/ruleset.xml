@@ -63,6 +63,8 @@
 	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
 		<properties>
 			<property name="allowFullyQualifiedGlobalClasses" value="1"/>
+			<property name="allowFullyQualifiedGlobalFunctions" value="1"/>
+			<property name="allowFullyQualifiedGlobalConstants" value="1"/>
 		</properties>
 	</rule>
 
