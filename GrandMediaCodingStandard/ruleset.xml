@@ -23,6 +23,8 @@
 		<exclude
 				name="Squiz.Commenting.FunctionComment.MissingParamTag"/> <!-- I'm not gonna write @param, if it's already in the typehint -->
 		<exclude name="Squiz.PHP.Heredoc"/>
+		<exclude name="Consistence.Exceptions.ExceptionDeclaration.NotEndingWithException" />
+		<exclude name="Consistence.Exceptions.ExceptionDeclaration.IncorrectExceptionDirectory" />
 	</rule>
 
 	<rule ref="Generic.PHP.BacktickOperator"/>
