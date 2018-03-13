@@ -15,7 +15,7 @@
 	"require": {
 		"php": ">=7.1",
 		"consistence/coding-standard": "^2.0",
-		"slevomat/coding-standard": "^3.0"
+		"slevomat/coding-standard": "^4.0"
 	},
 	"autoload": {
 		"psr-4": {
