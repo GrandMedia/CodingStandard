@@ -14,19 +14,15 @@
 	<rule ref="vendor/consistence/coding-standard/Consistence/ruleset.xml">
 		<exclude
 				name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified"/> <!-- this just prevents using the "use" section -->
+		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
+		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/>
+		<exclude
+				name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace"/>
 		<exclude
 				name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/><!-- checks for long scalar names in PHPDoc, but we use short -->
 		<exclude
 				name="Squiz.Commenting.FunctionComment.MissingParamTag"/> <!-- I'm not gonna write @param, if it's already in the typehint -->
 		<exclude name="Squiz.PHP.Heredoc"/>
-	</rule>
-
-	<!-- include slevomat rules -->
-	<rule ref="vendor/slevomat/coding-standard/SlevomatCodingStandard/ruleset.xml">
-		<exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName"/>
-		<exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException"/>
-		<exclude
-				name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace"/>
 	</rule>
 
 	<rule ref="Generic.PHP.BacktickOperator"/>
@@ -122,4 +118,8 @@
 	<rule ref="Squiz.PHP.Heredoc">
 		<exclude-pattern>*.phpt</exclude-pattern>
 	</rule>
+
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+	<rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
 </ruleset>
