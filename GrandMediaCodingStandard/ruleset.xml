@@ -74,18 +74,6 @@
 		</properties>
 	</rule>
 
-	<!-- @throws in tests -->
-	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
-		<properties>
-			<property name="usefulAnnotations" type="array" value="@throws,@covers,@dataProvider,@inject,@testCase"/>
-		</properties>
-	</rule>
-
-	<!-- ignore in tests -->
-	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification">
-		<exclude-pattern>*/tests/*</exclude-pattern>
-	</rule>
-
 	<!-- ignore in tests -->
 	<rule ref="Squiz.Classes.ClassFileName.NoMatch">
 		<!-- more exceptions in one file won't match -->
@@ -106,12 +94,6 @@
 		<exclude-pattern>*.phpt</exclude-pattern>
 		<exclude-pattern>*/tests/bootstrap.php</exclude-pattern>
 		<exclude-pattern>*/tests/*/bootstrap.php</exclude-pattern>
-	</rule>
-
-	<rule ref="Squiz.PHP.ForbiddenFunctions">
-		<properties>
-			<property name="forbiddenFunctions" type="array" value="sizeof=>count,delete=>unset,print=>echo,is_null=>null,create_function=>null,var_dump=>null,dump=>null,print_r=>null"/>
-		</properties>
 	</rule>
 
 	<!-- allow in tests -->
