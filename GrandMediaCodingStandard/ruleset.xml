@@ -20,6 +20,7 @@
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/>
 		<exclude name="Squiz.Commenting.FunctionComment.ParamNameNoMatch"/>
 		<exclude name="Squiz.PHP.Heredoc"/>
+		<exclude name="Squiz.WhiteSpace.MemberVarSpacing"/>
 		<exclude name="Consistence.Exceptions.ExceptionDeclaration.NotEndingWithException" />
 		<exclude name="Consistence.Exceptions.ExceptionDeclaration.IncorrectExceptionDirectory" />
 	</rule>
@@ -80,12 +81,6 @@
 		<exclude-pattern>*/exceptions.php</exclude-pattern>
 		<!-- useful for writing files with lot of stub classes -->
 		<exclude-pattern>*/tests/*</exclude-pattern>
-	</rule>
-
-	<rule ref="Squiz.Commenting.VariableComment">
-		<exclude name="Squiz.Commenting.VariableComment.TagNotAllowed"/>
-		<exclude name="Squiz.Commenting.VariableComment.VarOrder"/>
-		<exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/>
 	</rule>
 
 	<rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
