@@ -13,7 +13,7 @@
 		"issues": "https://github.com/GrandMedia/CodingStandard/issues"
 	},
 	"require": {
-		"php": ">=7.1",
+		"php": ">=7.4",
 		"consistence/coding-standard": "^3.10",
 		"slevomat/coding-standard": "^6.3"
 	},
