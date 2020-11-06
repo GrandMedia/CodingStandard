@@ -7,16 +7,16 @@ cache:
         - $HOME/.composer/cache
 
 php:
-  - 7.1
+  - 7.4
 
 matrix:
   fast_finish: true
   include:
-  - php: 7.1
+  - php: 7.4
     env: CODING_STANDARD=1
 
 install:
-  - travis_retry composer update --no-interaction --no-suggest --no-progress --prefer-stable
+  - travis_retry composer update --no-interaction --no-progress --prefer-stable
 
 script:
   - if [ "$CODING_STANDARD" = "1" ]; then php vendor/bin/phpcs --standard=ruleset.xml --encoding=utf-8 -sp GrandMediaCodingStandard; fi
