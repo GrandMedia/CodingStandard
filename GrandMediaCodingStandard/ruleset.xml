@@ -57,8 +57,6 @@
 		<exclude-pattern>*/tests/*/bootstrap.php</exclude-pattern>
 	</rule>
 
-	<rule ref="SlevomatCodingStandard.Commenting.DisallowOneLinePropertyDocComment"/>
-
 	<!-- allow \global_function() it's faster -->
 	<rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
 		<properties>
